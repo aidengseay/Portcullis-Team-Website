@@ -1,0 +1,42 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+/* container styles */
+.container {
+    text-align: center;
+    background: rgba(185, 185, 185, 0.863);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eeeded;
+}
+
+#logo {
+    width: 150px;
+    height: 150px;
+    background-color: #e0e0e0;
+    display: inline-block;
+    line-height: 150px; /* Vertically centers the alt text if image fails */
+    color: #888;
+    font-weight: bold;
+}
+
+
+/* Text styles */
+h1 {
+    color: #242323;
+}
+
+p {
+    color: #242424;
+    font-size: 18px;
+}
