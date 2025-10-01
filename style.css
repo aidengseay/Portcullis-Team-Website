@@ -3,6 +3,7 @@ body {
   font-family: Arial, sans-serif;
   color: #222222;
   background-color: #f6f8fb;
+  display: flex;
 }
 
 /* directory */
@@ -68,11 +69,9 @@ body {
   flex-direction: column;
   align-items: flex-start;
   padding: 20px;
-  max-width: 1200px;
-  margin-left: 200px;
-  margin-right: 0;
-  margin-inline: auto;
-  margin-bottom: 40px;
+  max-width: 75%;
+  margin: 40px auto 40px calc(200px + (100% - 200px - 75%) / 2);
+  margin-right: auto;
   border: 1px solid #ddd;
   border-radius: 10px;
   background-color: #ffffff;
@@ -117,3 +116,56 @@ body {
   margin-bottom: 5px;
   padding-left: 40px;
 }
+
+/* Centered titles inside the content box */
+.content-title {
+  display: flex;
+  justify-content: center; /* Horizontally centers content */
+  align-items: center;    /* Vertically aligns content */
+  gap: 20px;              /* Adds space between the text and logo */
+  width: 100%;            /* Ensures the container takes up the full width */
+}
+
+.content-title img {
+  height: 100px;
+  width: auto;
+}
+
+/*/////////////////////////////////////*/
+
+.button {
+  display: inline-block;
+  margin-top: 15px;
+  margin-left: 20px;
+  padding: 10px 20px;
+  background-color: #003087; /* General Dynamics blue */
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0055c4; /* lighter blue on hover */
+}
+
+
+.sponsor-container {
+  display: flex;         /* Aligns items in a row */
+  align-items: center;   /* Vertically centers the items */
+  gap: 15px;             /* Adds space between the logo and the text */
+}
+
+.sponsor-container img {
+  height: 50px;          /* Sets a fixed height for the logo */
+  width: auto;           /* Maintains the logo's aspect ratio */
+}
+
+.company-name {
+  color: #183880;
+  font-weight: bold;
+}
+
+
+
