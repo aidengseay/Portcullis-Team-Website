@@ -203,3 +203,50 @@ body {
   font-size: 0.95em;
   color: #555;
 }
+
+
+/* ---- Mobile Responsiveness ---- */
+@media (max-width: 800px) {
+  /* Remove the fixed sidebar and body padding */
+  body {
+    padding-left: 0;
+    display: block; /* Stack header and content vertically */
+  }
+
+  /* Transform the sidebar into a header */
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative; /* Change from 'fixed' to 'relative' */
+    display: flex;
+    align-items: center; /* Vertically align items in the header */
+    flex-wrap: wrap; /* Allow items to wrap on very small screens */
+    padding-top: 0;
+  }
+
+  /* Adjust navigation links for the new header */
+  .sidebar a {
+    padding: 15px;
+  }
+
+  /* Make the logo smaller and remove its bottom margin */
+  .sidebar .logo {
+    width: 80px;
+    margin: 0;
+  }
+
+  /* Allow content to take up the full width */
+  .content {
+    margin: 20px;
+    max-width: 100%;
+    min-height: unset; /* Remove fixed min-height */
+  }
+
+  /* Adjust the large page titles */
+  .title {
+    margin-left: 0;
+    font-size: 40px;
+    padding: 20px;
+    flex-direction: column; /* Stack title and logo vertically */
+  }
+}
