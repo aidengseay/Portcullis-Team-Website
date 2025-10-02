@@ -1,87 +1,252 @@
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    display: flex ;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #222222;
+  background-color: #f6f8fb;
+  display: flex;
+  padding-left: 200px;
 }
 
-
-/* container styles */
-.container {
-    text-align: center;
-    background: rgba(185, 185, 185, 0.863);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border: 1px solid #eeeded;
+/* directory */
+.sidebar {
+  width: 200px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #003087;
+  padding-top: 20px;
 }
 
-/* Team container styles */
+.sidebar h2 {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar a {
+  display: block;
+  color: #ffffff;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  background-color: #0055c4;
+}
+
+.sidebar a.active {
+  background-color: #0050b0;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 30px auto;
+  width: 120px;
+  height: auto;
+}
+
+/* title for each page */
+.title {
+  color: #003087;
+  font-size: 80px;
+  font-weight: bold;
+  margin-left: 200px;
+  padding: 40px 20px 20px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.title img {
+  height: 100px;
+  width: auto;
+}
+
+/* content place in each page */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  max-width: 75%;
+  /*margin: 40px auto 40px calc(200px + (100% - 200px - 75%) / 2);*/
+  margin: 40px auto;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #ffffff;
+  font-size: 15px;
+  min-height: 70vh;
+}
+
+.content h1 {
+  color: #003087;
+}
+
+.content p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: left;
+  max-width: 90%;
+}
+
+/* lists */
+.content ul {
+  list-style-position: inside;
+  padding-left: 0;
+  margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 90%;
+}
+
+.content ul li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+
+/* nested lists */
+.content ul li ul {
+  list-style-type: circle;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+.content ul li ul li {
+  margin-bottom: 5px;
+  padding-left: 40px;
+}
+
+/* Centered titles inside the content box */
+.content-title {
+  display: flex;
+  justify-content: center; /* Horizontally centers content */
+  align-items: center; /* Vertically aligns content */
+  gap: 20px; /* Adds space between the text and logo */
+  width: 100%; /* Ensures the container takes up the full width */
+}
+
+.content-title img {
+  height: 100px;
+  width: auto;
+}
+
+/*/////////////////////////////////////*/
+
+.button {
+  display: inline-block;
+  margin-top: 15px;
+  margin-left: 20px;
+  padding: 10px 20px;
+  background-color: #003087; /* General Dynamics blue */
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0055c4; /* lighter blue on hover */
+}
+
+.sponsor-container {
+  display: flex; /* Aligns items in a row */
+  align-items: center; /* Vertically centers the items */
+  gap: 15px; /* Adds space between the logo and the text */
+}
+
+.sponsor-container img {
+  height: 50px; /* Sets a fixed height for the logo */
+  width: auto; /* Maintains the logo's aspect ratio */
+}
+
+.company-name {
+  color: #183880;
+  font-weight: bold;
+}
+
 .team-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; /* Allows team members to wrap to the next line on smaller screens */
-    background: rgba(185, 185, 185, 0.863);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border: 1px solid #eeeded;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.team-container h2 {
+.team {
+  flex: 0 1 220px;
+  padding: 15px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background: #f9f9f9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.team-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.team h2 {
+  margin: 10px 0 5px;
+  font-size: 1.2em;
+}
+
+.team p {
+  margin: 0;
+  font-size: 0.95em;
+  color: #555;
+}
+
+
+/* ---- Mobile Responsiveness ---- */
+@media (max-width: 800px) {
+  /* Remove the fixed sidebar and body padding */
+  body {
+    padding-left: 0;
+    display: block; /* Stack header and content vertically */
+  }
+
+  /* Transform the sidebar into a header */
+  .sidebar {
     width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #242323;
-}
+    height: auto;
+    position: relative; /* Change from 'fixed' to 'relative' */
+    display: flex;
+    align-items: center; /* Vertically align items in the header */
+    flex-wrap: wrap; /* Allow items to wrap on very small screens */
+    padding-top: 0;
+  }
 
-.team-member {
-    text-align: center;
-    margin: 10px;
-}
+  /* Adjust navigation links for the new header */
+  .sidebar a {
+    padding: 15px;
+  }
 
-.team-member img {
-    width: 150px;
-    height: 150px;
-    border-radius: 5%;
-    object-fit: cover;
-}
-.team-member h1 {
-    margin-top: 5px;
-    font-size: 18px;
-    font-weight: bolder;
-    color: #242323;
-}
+  /* Make the logo smaller and remove its bottom margin */
+  .sidebar .logo {
+    width: 80px;
+    margin: 0;
+  }
 
-.team-member p {
-    margin-top: 5px;
-    font-size: 12px;
-    font-weight: bold;
-    color: rgb(78, 76, 76);
-}
+  /* Allow content to take up the full width */
+  .content {
+    margin: 20px;
+    max-width: 100%;
+    min-height: unset; /* Remove fixed min-height */
+  }
 
-#logo {
-    width: 150px;
-    height: 150px;
-    background-color: #e0e0e0;
-    display: inline-block;
-    line-height: 150px; /* Vertically centers the alt text if image fails */
-    color: #888;
-    font-weight: bold;
-}
-
-
-/* Text styles */
-h1 {
-    color: #242323;
-}
-
-p {
-    color: #242424;
-    font-size: 18px;
+  /* Adjust the large page titles */
+  .title {
+    margin-left: 0;
+    font-size: 40px;
+    padding: 20px;
+    flex-direction: column; /* Stack title and logo vertically */
+  }
 }
